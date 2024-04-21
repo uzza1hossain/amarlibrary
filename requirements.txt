@@ -8,24 +8,41 @@ asgiref==3.8.1
     # via django
 asttokens==2.4.1
     # via stack-data
+certifi==2024.2.2
+    # via requests
+cffi==1.16.0
+    # via cryptography
+charset-normalizer==3.3.2
+    # via requests
+cryptography==42.0.5
+    # via pyjwt
 decorator==5.1.1
     # via ipython
+defusedxml==0.7.1
+    # via python3-openid
 django==5.0.4
     # via
     #   -r requirements.in
+    #   django-allauth
     #   django-extensions
+django-allauth==0.61.1
+    # via -r requirements.in
 django-environ==0.11.2
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
 executing==2.0.1
     # via stack-data
+idna==3.7
+    # via requests
 ipython==8.23.0
     # via -r requirements.in
 jedi==0.19.1
     # via ipython
 matplotlib-inline==0.1.7
     # via ipython
+oauthlib==3.2.2
+    # via requests-oauthlib
 parso==0.8.4
     # via jedi
 pexpect==4.9.0
@@ -38,8 +55,20 @@ ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.2
     # via stack-data
+pycparser==2.22
+    # via cffi
 pygments==2.17.2
     # via ipython
+pyjwt[crypto]==2.8.0
+    # via django-allauth
+python3-openid==3.2.0
+    # via django-allauth
+requests==2.31.0
+    # via
+    #   django-allauth
+    #   requests-oauthlib
+requests-oauthlib==2.0.0
+    # via django-allauth
 six==1.16.0
     # via asttokens
 sqlparse==0.5.0
@@ -52,5 +81,7 @@ traitlets==5.14.3
     #   matplotlib-inline
 typing-extensions==4.11.0
     # via psycopg
+urllib3==2.2.1
+    # via requests
 wcwidth==0.2.13
     # via prompt-toolkit
