@@ -1,8 +1,8 @@
 from django.db import models
-
-# Create your models here.
 from django.db.models import UniqueConstraint
 from django.db.models.functions import Lower
+
+# Create your models here.
 
 
 class Genre(models.Model):
