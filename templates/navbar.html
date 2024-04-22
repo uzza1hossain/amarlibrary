@@ -4,11 +4,11 @@
         <li style="float: left;"><a href="#" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Features</a></li>
         <li style="float: left;"><a href="#" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Pricing</a></li>
         {% if user.is_authenticated %}
-            <li style="float: right;"><a href="accounts/logout" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Logout</a></li>
+            <li style="float: right;"><a href="/accounts/logout" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Logout</a></li>
             <li style="float: right;"><span style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">{{ user.username }}</span></li>
         {% else %}
-            <li style="float: right;"><a href="accounts/signup" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Signup</a></li>
-            <li style="float: right;"><a href="accounts/login" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Login</a></li>
+            <li style="float: right;"><a href="/accounts/signup" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Signup</a></li>
+            <li style="float: right;"><a href="/accounts/login" style="display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;">Login</a></li>
         {% endif %}
     </ul>
 </nav>
