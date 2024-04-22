@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "allauth.account",
     # Local apps
     "accounts",
+    "catalog",
 ]
 
 MIDDLEWARE = [
