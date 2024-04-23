@@ -61,6 +61,9 @@ class Book(models.Model):
         "Language", on_delete=models.RESTRICT, related_name="books"
     )
 
+    def __str__(self):
+        return self.title
+
 
 class Borrow(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="borrows")
@@ -81,12 +84,19 @@ class Borrow(models.Model):
         self.book.borrow_status = "available" if self.returned else "on_loan"
         self.book.save()
 
+    def __str__(self):
+        return f"{self.book.title} - {self.borrower}"
+
 
 class Note(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="notes")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        words = self.text.split()[:50]
+        return " ".join(words)
 
     class Meta:
         ordering = ["-date"]
@@ -97,12 +107,21 @@ class Author(models.Model):
     description = models.TextField(blank=True, null=True)
     is_public = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Publication(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True, max_length=1000)
     is_public = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Language(models.Model):
     name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
