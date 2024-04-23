@@ -44,7 +44,7 @@ class Book(models.Model):
     summary = models.TextField(blank=True, null=True, max_length=1000)
     personal_review = models.TextField(blank=True, null=True, max_length=1000)
     personal_rating = models.IntegerField(blank=True, null=True)
-    isbn = models.CharField("ISBN", max_length=13, unique=True)
+    isbn = models.CharField("ISBN", max_length=13, unique=True, blank=True, null=True)
     genre = models.ManyToManyField(
         Genre, help_text="Select a genre for this book", related_name="books"
     )
